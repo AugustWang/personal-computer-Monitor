@@ -13,11 +13,11 @@ like pcMonitorService.sh, you should put this gay into /usr/local/.
 and you should modify somewhere which I havd marked as "#TODO", mostly they are about the e-mail.
 
 ok,now you should give the user which you want monitor more permission, such as, shutdown. yeah, shutdown! I konw it seems very dangerous, but you must do that, if you want it looks like fascinating！
-<h4>modified shutdown shell</h4>
+first,modified shutdown shell
 <b>sudo vi /sbin/shutdown</b>
-then change :
-# %users localhost=/sbin/shutdown -h now
-to:
+then change the line contain:
+ %users localhost=/sbin/shutdown -h now
+to (remove the first sharp symbol):
 %yanghua localhost=/sbin/shutdown -h now
 notice:yanghua is just my pc's user name
 
