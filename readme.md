@@ -27,7 +27,7 @@ in the Treminal:
 
 <h1>More info</h1>
 more information, please go and see my blog:
-<a href="http://blog.csdn.net/yanghua_kobe">http://blog.csdn.net/yanghua_kobe</a>
+<a href="http://blog.csdn.net/yanghua_kobe/article/details/8576106">http://blog.csdn.net/yanghua_kobe/article/details/8576106</a>
 
 and if you have any problem, give me your mail:
 <a href="mailto:yanghua1127@gmail.com">yanghua1127@gmail.com</a>
