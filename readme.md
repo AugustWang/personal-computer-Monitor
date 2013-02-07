@@ -1,8 +1,8 @@
 <h1>Usage</h1>
 three documents:
 <h4>(1)com.yanghua.pcMonitorService.plist</h4>
-if you want receive [pc start] msg, put the file into /Library/LaunchDaemons/.
-other way,to put this file into /Library/LaunchAgents so that you can receive someone has login into your system.
+if you want to receive [pc start] msg, put the file into /Library/LaunchDaemons/.
+other way,to put this file into /Library/LaunchAgents so that you can receive the msg to kown someone has logined into your system.
 <h4>(2)pcMonitorService.sh</h4>
 put the shell script file into /usr/local/,
 and give other user execute permission in the terminal with below cmd:
@@ -12,7 +12,7 @@ it's the program logic that will be executed actually.
 like pcMonitorService.sh, you should put this gay into /usr/local/.
 and you should modify somewhere which I havd marked as "#TODO", mostly they are about the e-mail.
 
-ok,now you should give the user which you want monitor more permission, such as, shutdown. yeah, shutdown! I konw it seems very dangerous, but you must do that, if you want it looks like fascinating！
+ok,now you should give the user which you want monitor more permission, such as, shutdown. yeah, shutdown! I konw it seems to be very dangerous, but you must do that, if you want it looks like fascinating！
 first,modified shutdown shell
 <b>sudo vi /sbin/shutdown</b>
 then change the line contain:
