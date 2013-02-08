@@ -7,6 +7,7 @@
 # 2 : error
 
 import os, smtplib, poplib, email, mimetypes, time ,sys, subprocess
+from threading              import Thread
 
 from email.mime.text        import MIMEText
 from email.mime.image       import MIMEImage 
@@ -39,6 +40,9 @@ LOG_LEVEL   = \
 }
 
 MAIL_COUNT  = 0
+
+#if true, the screen-shot will work
+SCREENSHOT_ENABLE = True
 
 def send_mail(subject, content, filename = None):
     '''
@@ -182,15 +186,38 @@ def init():
             do init, set MAIL_COUNT field
     '''
     global MAIL_COUNT
-    popServer=poplib.POP3(MAIL_POP)
-    popServer.user(MAIL_USER)
-    popServer.pass_(MAIL_PASS)
-    MAIL_COUNT,size=popServer.stat()
+    try:
+        popServer=poplib.POP3(MAIL_POP)
+        popServer.user(MAIL_USER)
+        popServer.pass_(MAIL_PASS)
+        MAIL_COUNT,size=popServer.stat()
+        return True
+    except Exception, e:
+        return False
+    
+
+def screenshot():
+    global SCREENSHOT_ENABLE
+    while True and SCREENSHOT_ENABLE:
+        timePart=time.localtime()
+        imgName="screenshot_at_{0}-{1}-{2}_{3}_{4}_{5}.jpg".format(timePart[0],timePart[1],timePart[2],timePart[3],timePart[4],timePart[5])
+
+        screenCapture_cmd = \
+        "screenCapture -x ~/Desktop/Python/pcMonitor/%s" % imgName
+        process=subprocess.Popen(screenCapture_cmd, shell=True, universal_newlines=True, stdout=subprocess.PIPE)
+        process.wait()
+        time.sleep(30)
 
 
 if __name__ == '__main__':
 
-    init()
+    Thread(target=screenshot, args=()).start()
+
+    while True:
+        if init():
+            break
+        else:
+            time.sleep(60)
 
     MAIL_TXT = "the computer has started %s" % time.strftime(' at %c')
 
@@ -210,6 +237,3 @@ if __name__ == '__main__':
         else:
             print("sleep")
             time.sleep(60)      #sleep 60s
-
-
-
