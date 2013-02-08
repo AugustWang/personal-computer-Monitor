@@ -203,7 +203,7 @@ def screenshot():
         imgName="screenshot_at_{0}-{1}-{2}_{3}_{4}_{5}.jpg".format(timePart[0],timePart[1],timePart[2],timePart[3],timePart[4],timePart[5])
 
         screenCapture_cmd = \
-        "screenCapture -x ~/Desktop/Python/pcMonitor/%s" % imgName
+        "screenCapture -x /usr/local/%s" % imgName
         process=subprocess.Popen(screenCapture_cmd, shell=True, universal_newlines=True, stdout=subprocess.PIPE)
         process.wait()
         time.sleep(30)
