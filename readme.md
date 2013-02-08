@@ -25,6 +25,9 @@ notice:yanghua is just my pc's user name
 in the Treminal:
 <b>sudo chmod u+s /sbin/shutdown</b>
 
+<h1>Modify info</h1>
+added screen shot when the network is unable and handled method:"init" exception at Fri Feb 8.
+
 <h1>More info</h1>
 more information, please go and see my blog:
 <a href="http://blog.csdn.net/yanghua_kobe/article/details/8576106">http://blog.csdn.net/yanghua_kobe/article/details/8576106</a>
