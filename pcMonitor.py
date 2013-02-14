@@ -6,7 +6,7 @@
 # 1 : warning
 # 2 : error
 
-import os, smtplib, poplib, email, mimetypes, time ,sys, subprocess
+import os, smtplib, poplib, email, mimetypes, time, sys, subprocess
 from threading              import Thread
 
 from email.mime.text        import MIMEText
